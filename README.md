@@ -1,6 +1,10 @@
 Welcome to the _Remote Control_ Firefox Extension.
 
+<<<<<<< HEAD
 It allows you to remote control a particular Firefox window with a TCP
+=======
+It allows you to remote control a particular Firefox tab with a TCP
+>>>>>>> v2.1.0
 connection (such as telnet or netcat).
 
 Something like this:
@@ -25,9 +29,12 @@ Getting Started
 * Download and install the extension
 * Select a Firefox window or tab you want to remote control
 * Click the Remote Control toolbar button
+<<<<<<< HEAD
     * If firebug is installed and active in that window, you can see logging in
       the Firebug console. (Firebug is not required, but the firebug console
       will be used if installed and active)
+=======
+>>>>>>> v2.1.0
 * Use telnet, nc or any other tool to send javascript commands to your Remote
   Controlled Firefox.
 
@@ -41,6 +48,7 @@ There are preferences for:
 * Which TCP port number to listen on (default = 32000)
 * Whether to send remote commands to currently active tab (default = false)
 
+<<<<<<< HEAD
 In addition, by default when firefox is initially started, Remote Control is
 _not_ active. You have to select a window/tab and start Remote Control by
 clicking the toolbar button.
@@ -52,6 +60,8 @@ start when Firefox starts. The requirement for the icon to be present is to
 avoid this extension being used for malicious purposes without the user
 knowing.
 
+=======
+>>>>>>> v2.1.0
 VIM Integration
 ===============
 
@@ -88,11 +98,79 @@ support.
 If you don't see `+python`, you can rebuild VIM from sources with +python support.
 Iinstructions for this can be found [here](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source).
 
+<<<<<<< HEAD
+=======
+Cookies management
+==================
+
+Three commands are available to manage cookies/sessions:
+
+`clearcookies` clears all the cookies (for any domain) stored for the active profile
+
+`getcookies` will return into `result` an array of objects. The objects represents all the cookies with their own properties.
+
+`setcookies` followed by an array of cookie-objects sets/overwrites the cookies passed (all cookie properties **must** be defined for each cookie passed)
+
+**Cookie properties:**
+
+A cookie is defined by the following properties:
+
+|Property|Type|
+|-|-|
+|host|string|
+|path|string|
+|name|string|
+|value|string|
+|isSecure|boolean|
+|isHttpOnly|boolean|
+|isSession|boolean|
+|expiry|integer|
+
+**Example:**
+
+    $ telnet localhost 32000
+    Trying 127.0.0.1...
+    Connected to localhost.
+    Escape character is '^]'.
+    clearcookies
+    {"result":"OK"}
+    window.location.href="https://www.mozilla.org"
+    {"result":"https://www.mozilla.org"}
+    getcookies
+    {"result":[{"host":".mozilla.org","path":"/","name":"optimizelyEndUserId","value":"oeu1459095848224r0.5301917878826897","isSecure":false,"isHttpOnly":false,"isSession":false,"expiry":1774455848},
+               {"host":".mozilla.org","path":"/","name":"optimizelyBuckets","value":"%7B%7D","isSecure":false,"isHttpOnly":false,"isSession":false,"expiry":1774455848},
+               .
+               .
+               .
+    ] }
+    setcookies [{"host":".mozilla.org","path":"/","name":"optimizelyEndUserId","value":"oeu1459095848224r0.5301917878826897","isSecure":false,"isHttpOnly":false,"isSession":false,"expiry":1774455848}]
+    {"result":"OK"}
+
+>>>>>>> v2.1.0
 Issues
 ======
 Please report any problems to the
 [Issue tracker](https://github.com/FF-Remote-Control/FF-Remote-Control/issues)
 
+<<<<<<< HEAD
+=======
+Known issues:
+- On pages protected by a Content Security Policy (CSP), some JavaScript or
+DOM features are disabled. For example, you will not be able to define
+functions through remote control, and some DOM functions like
+`document.write` may fail. For workarounds to some of these issues, you can
+consult [the Mozilla documentation on interacting with page scripts](https://developer.mozilla.org/en-US/Add-ons/SDK/Guides/Content_Scripts/Interacting_with_page_scripts).
+These limitations do not apply to non-CSP pages.
+
+Credits
+=======
+This version of FF-Remote-Control is a complete rewrite from version 1.
+The original version was written by Peter Valdemar Mørch (pmorch) with improvements
+from Hari Mahadevan (harikvpy).
+
+The toolbar icon is from [Icons8](https://icons8.com/web-app/2102/remote-control).
+
+>>>>>>> v2.1.0
 License
 =======
 

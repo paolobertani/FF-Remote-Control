@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+Version 2.1.0 (paolobertani)
+- Implemented getcookies, setcookies, clearcookies commands
+
+Version 2.0.0 (Robert Xiao <nneonneo@gmail.com>)
+- Total rewrite to use the Firefox Add-on SDK
+- No longer requires browser restart
+- New icon and toolbar behaviour (it shows as pressed only on the tab that is accepting commands)
+- Autostart preference
+- Ability to operate on pages protected by Content Security Policy (albeit with some limitations)
+- Use standard Firefox addon preference page to avoid preference layout bugs
+
+>>>>>>> v2.1.0
 Version 1.3 (Robert Xiao <nneonneo@gmail.com>)
 - Minor packaging changes (remove unnecessary files)
 - Fix a minor event handler leak
@@ -7,7 +21,11 @@ Version 1.2 (Robert Xiao <nneonneo@gmail.com>)
   serialization exceptions
 - Reduced memory usage with large numbers of remote control calls
 Version 1.1 (Hari Mahadevan <hari@smallpearl.com>)
+<<<<<<< HEAD
 - Updated chrome/content/overlay.js chaning log(msg) to 
+=======
+- Updated chrome/content/overlay.js chaning log(msg) to
+>>>>>>> v2.1.0
   console.log(msg), to make it work under Firefox 36.
 Version 1.0
 - Cleaned up all outstanding issues from bugtracker on github

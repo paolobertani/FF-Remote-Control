@@ -1,0 +1,43 @@
+{
+  "title": "Remote Control",
+  "id": "remote-control@morch.com",
+  "name": "remote-control",
+  "version": "2.1.0",
+  "description": "Remote control the browser via a socket.",
+  "main": "index.js",
+  "author": "Robert Xiao",
+  "license": "GPL v2",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "permissions": {
+    "private-browsing": true,
+    "multiprocess": true
+  },
+  "preferences": [{
+    "name": "localhostOnly",
+    "title": "Listen on localhost only",
+    "description": "If true, accept connections from localhost only. If false, accept connections from anywhere (may be insecure!).",
+    "type": "bool",
+    "value": true
+  },{
+    "name": "port",
+    "title": "TCP port number to listen on",
+    "description": "Which TCP port number the server should listen on.",
+    "type": "integer",
+    "value": 32000
+  },{
+    "name": "activeTab",
+    "title": "Send commands to active tab",
+    "description": "If true, commands are sent to whichever tab is active. If false, commands are only sent to the tab in which remote control was activated.",
+    "type": "bool",
+    "value": false
+  },{
+    "name": "autostart",
+    "title": "Start automatically with Firefox",
+    "description": "If true, remote control is activated as soon as Firefox starts.",
+    "type": "bool",
+    "value": false
+  }]
+}
